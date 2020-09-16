@@ -38,6 +38,7 @@ module.exports = {
   async verifyUser(req, res, next) {
     try {
       const token = req.headers.authorization.split(' ')[1]
+      if (!token) return res.sendStatus(400)
       const decoded  = jwt.verify(token, process.env.TOKEN_ACCESS_KEY)
       if (decoded ) {
         const user = await User.findById({_id: decoded.id})
