@@ -1,7 +1,6 @@
 const express = require('express')
 const morgan = require('morgan')
 const connect = require('./config/db')
-const bcrypt = require('bcrypt')
 
 const app = express()
 
@@ -18,8 +17,9 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.json())
 
 // Routes
-app.use('/', (req, res, next) => res.send("It's working!"))
-// app.use('/api/auth', require('./routes/auth'))
+app.get('/', (req, res, next) => res.send("It's working!"))
+app.use('/api/auth', require('./routes/auth'))
+app.use('/api/box', require('./routes/message-box'))
 
 // ----------------------------------- middleware -----------------------------------
 const port = process.env.PORT || 4000
