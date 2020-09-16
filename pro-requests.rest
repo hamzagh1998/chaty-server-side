@@ -1,0 +1,27 @@
+### Register
+POST https://chaty-11.herokuapp.com/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "saleh",
+  "password": "saleh"
+}
+
+### Login
+POST https://chaty-11.herokuapp.com/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "saleh",
+  "password": "saleh"
+}
+
+### Send message
+POST https://chaty-11.herokuapp.com/api/box/chat
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjE1YjE3Y2JlMTlhMDAxZTk4Nzk0NiIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDIxNjA1NH0.AtLF93V874aUdytRISoQf8GCxAb5JkjjJgu-fkuvrks
+
+{
+  "peerId": "5f615ac5cbe19a001e987945",
+  "message": "i'm fine thanks?"
+}

@@ -1,0 +1,27 @@
+### Register
+POST http://127.0.0.1:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "saleh",
+  "password": "saleh"
+}
+
+### Login
+POST http://127.0.0.1:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "hamza",
+  "password": "hamza"
+}
+
+### Send message
+POST http://127.0.0.1:3000/api/box/chat
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjI1MjFkYTExMzQ0Mzc0NTAxMDFjMiIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDI4Mjg5Mn0.an3fgRo2lI5daomBFlc5nOhlSSRJ6Wcq7Si7cH9kbEQ
+
+{
+  "peerId": "5f625e0532623f938265e019",
+  "message": "woow!"
+}

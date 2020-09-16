@@ -42,7 +42,7 @@ module.exports = {
       if (decoded ) {
         const user = await User.findById({_id: decoded.id})
         if (user) {
-          req.user = req.user = {id: user._id, username: user.username, blockedBy: user.blockedBy}
+          req.user = {id: user._id, username: user.username, blockedBy: user.blockedBy}
           next()
         } else {
           res.sendStatus(401)
