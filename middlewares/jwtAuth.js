@@ -37,19 +37,23 @@ module.exports = {
   },
   async verifyUser(req, res, next) {
     try {
-      const token = req.headers.authorization.split(' ')[1]
-      if (!token) return res.sendStatus(400)
-      const decoded  = jwt.verify(token, process.env.TOKEN_ACCESS_KEY)
-      if (decoded ) {
-        const user = await User.findById({_id: decoded.id})
-        if (user) {
-          req.user = {id: user._id, username: user.username, blockedBy: user.blockedBy}
-          next()
+      const authStr = req.headers.authorization
+      if (authStr) {
+        const token = authStr.split(' ')[1]
+        const decoded  = jwt.verify(token, process.env.TOKEN_ACCESS_KEY)
+        if (decoded ) {
+          const user = await User.findById({_id: decoded.id})
+          if (user) {
+            req.user = {id: user._id, username: user.username, blockedBy: user.blockedBy}
+            next()
+          } else {
+            res.sendStatus(401)
+          }
         } else {
-          res.sendStatus(401)
+          res.sendStatus(400)
         }
       } else {
-        res.sendStatus(400)
+        res.sendStatus(400) 
       }
     } catch (err) {
       res.json({error: true, msg: `Unexpected error: ${err}`})
