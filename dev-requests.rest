@@ -12,16 +12,16 @@ POST http://127.0.0.1:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "hamza",
-  "password": "hamza"
+  "username": "saleh",
+  "password": "saleh"
 }
 
 ### Send message
 POST http://127.0.0.1:3000/api/box/chat
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjI1MjFkYTExMzQ0Mzc0NTAxMDFjMiIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDI4Mjg5Mn0.an3fgRo2lI5daomBFlc5nOhlSSRJ6Wcq7Si7cH9kbEQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjI1ZTA1MzI2MjNmOTM4MjY1ZTAxOSIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDI5MDI5M30.Y6dhD_NyTc6SrUqDPcUgrCsxKbkVGuvFMFRIIklBMFk
 
 {
-  "peerId": "5f625e0532623f938265e019",
-  "message": "woow!"
+  "peerId": "5f62521da1134437450101c2",
+  "message": "hello!"
 }
