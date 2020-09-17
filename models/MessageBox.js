@@ -6,10 +6,6 @@ const MessageBoxSchema = new mongoose.Schema({
   },
   messages: {
     type: Array
-  },
-  viewed: {
-    type: Boolean,
-    default: false
   }
 })
 
