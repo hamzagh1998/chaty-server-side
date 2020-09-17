@@ -4,8 +4,12 @@ const MessageBoxSchema = new mongoose.Schema({
   user: {
     type: Object,
   },
-  lastMessages: {
-    type: [{ peer: Object, message: String }]
+  messages: {
+    type: Array
+  },
+  viewed: {
+    type: Boolean,
+    default: false
   }
 })
 

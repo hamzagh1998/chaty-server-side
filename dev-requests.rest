@@ -23,5 +23,8 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjI1ZTA1M
 
 {
   "peerId": "5f62521da1134437450101c2",
-  "message": "hello!"
+  "message": "Hello!"
 }
+
+### Get message detail
+GET http://127.0.0.1:3000/api/box/chat/5f625e0532623f938265e019
