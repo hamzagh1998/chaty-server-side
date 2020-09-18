@@ -25,6 +25,7 @@ async function checkPeer(userObj, peerObj, messageObj) {
             'messages.$.senderId': messageObj.user.id,
             'messages.$.senderName': messageObj.user.username,
             'messages.$.lastMessage': messageObj.message,
+            'messages.$.viewed': true,
             'messages.$.lastUpdate': lastUpdate
           }}, err => {
             if (err) console.error(err)
@@ -46,6 +47,7 @@ async function checkPeer(userObj, peerObj, messageObj) {
             'messages.$.senderId': messageObj.user.id,
             'messages.$.senderName': messageObj.user.username,
             'messages.$.lastMessage': messageObj.message,
+            'messages.$.viewed': false,
             'messages.$.lastUpdate': lastUpdate
           }}, err => {
             if (err) console.error(err)

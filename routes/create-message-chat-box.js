@@ -7,8 +7,10 @@ const checkMsgChatDoc = require('../helpers/checkMsgChatDoc')
 const getUserMsgsBox = require('../helpers/getUserMsgsBox')
 
 router.get('/messages', verifyUser, async (req, res) => {
-  const messagesList = await getUserMsgsBox(req.user.id)
-
+  const messagesBox = await getUserMsgsBox(req.user.id)
+  const response = messagesBox ? messagesBox.messages : null
+  
+  res.json(response)
 })
 
 
