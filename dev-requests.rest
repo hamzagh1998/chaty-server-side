@@ -23,7 +23,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjI1MjFkY
 
 {
   "peerId": "5f6251d1a1134437450101c1",
-  "message": "bllaaaa!?"
+  "message": "yoo!?"
 }
 
 ### Get message detail
