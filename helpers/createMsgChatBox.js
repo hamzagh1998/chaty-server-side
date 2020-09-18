@@ -3,7 +3,7 @@ const MessageBox = require('../models/MessageBox')
 
 const getUserMsgsBox = require('./getUserMsgsBox')
 
-async function createSenderMsgChatBox(userObj, peerObj, messageObj) {
+async function createMsgChatBox(userObj, peerObj, messageObj, viewed=false) {
   let senderChatDoc = null
   try {
      // ======================= Create new chatbox For the sender =======================
@@ -25,7 +25,7 @@ async function createSenderMsgChatBox(userObj, peerObj, messageObj) {
         senderId: lastMessageObj.user.id,
         senderName: lastMessageObj.user.username, 
         lastMessage: lastMessageObj.message,
-        viewed: true,
+        viewed: viewed,
         lastUpdate: Date.now()
       })
       await senderMessageDoc.save()
@@ -40,7 +40,7 @@ async function createSenderMsgChatBox(userObj, peerObj, messageObj) {
           senderId: lastMessageObj.user.id,
           senderName: lastMessageObj.user.username, 
           lastMessage: lastMessageObj.message,
-          viewed: true,
+          viewed: viewed,
           lastUpdate: Date.now()
         })
       await senderMessageDoc.save()
@@ -53,4 +53,4 @@ async function createSenderMsgChatBox(userObj, peerObj, messageObj) {
   }
 }
 
-module.exports = createSenderMsgChatBox
+module.exports = createMsgChatBox

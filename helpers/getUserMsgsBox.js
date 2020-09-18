@@ -11,5 +11,4 @@ async function getUserMsgsBox(userId) {
   }
 }
 
-
 module.exports = getUserMsgsBox

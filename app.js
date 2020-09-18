@@ -19,7 +19,8 @@ app.use(express.json())
 // Routes
 app.get('/', (req, res, next) => res.send("It's working!"))
 app.use('/api/auth', require('./routes/auth'))
-app.use('/api/box', require('./routes/create-message-chat-box'))
+app.use('/api/box', require('./routes/message-chat-box'))
+app.use('/api/users', require('./routes/users'))
 
 // ----------------------------------- middleware -----------------------------------
 const port = process.env.PORT || 4000

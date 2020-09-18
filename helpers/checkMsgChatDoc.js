@@ -1,9 +1,7 @@
 const ChatBox = require('../models/ChatBox')
 const MessageBox = require('../models/MessageBox')
 
-const createSenderMsgChatBox = require('./createSenderMsgChatBox')
-const createRecieverMsgChatBox = require('./createRecieverMsgChatBox')
-
+const createMsgChatBox = require('./createMsgChatBox')
 
 async function checkPeer(userObj, peerObj, messageObj) {
   const userId = userObj.id
@@ -31,7 +29,7 @@ async function checkPeer(userObj, peerObj, messageObj) {
             if (err) console.error(err)
           }) // Find Message Object inside messages Array
       } else {
-        senderChatDoc = await createSenderMsgChatBox(userObj, peerObj, messageObj)
+        senderChatDoc = await createMsgChatBox(userObj, peerObj, messageObj, true)
       }
       // ======================= Update the document for the reciever =======================
       const recieverChatDoc = await ChatBox.findOne({'user.id': peerId, 'peer.id': userId})
@@ -54,7 +52,7 @@ async function checkPeer(userObj, peerObj, messageObj) {
           }) // Find Message Object inside messages Array
         
       } else { // in case one of users delete his chatbox doc
-        createRecieverMsgChatBox(userObj, peerObj, messageObj)
+        await createMsgChatBox(peerObj, userObj, messageObj)
       }
     } catch (err) {
       console.error(err)

@@ -4,7 +4,7 @@ async function getUser(userId) {
   let userObj = null
   try {
     const user = await User.findById({_id: userId})
-    userObj = {id: user._id, username: user.username}
+    userObj = {id: user._id, username: user.username, blockedBy: user.blockedBy}
   } catch (err) {
     console.error(err)
   } finally {
