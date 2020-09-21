@@ -3,8 +3,8 @@ POST http://127.0.0.1:3000/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "ines",
-  "password": "ines"
+  "username": "hamza",
+  "password": "hamza"
 }
 
 ### Login
@@ -12,8 +12,8 @@ POST http://127.0.0.1:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "saleh",
-  "password": "saleh"
+  "username": "hamza",
+  "password": "hamza"
 }
 
 ### Send message
@@ -33,10 +33,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjI1MjFkY
 
 
 ### Get chatbox
-GET http://127.0.0.1:3000/api/box/chat/5f650648102e6f8fb6ba095e
+GET http://127.0.0.1:3000/api/box/chat/5f6526b04d766e8ae2b4a064
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjI1ZTA1MzI2MjNmOTM4MjY1ZTAxOSIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDQyMTQ4OX0.BqZeCFFuyER5TYQwEBbs_v4eVioSkh9Hq9I_wtN2eIM
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUxYzliZDEyYzlmOGQwZThiNGJiMCIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDUzMjU3OH0.niCT_f2JGDVOHgt25RY7o4fd-g1gZy0_8oVFkLlVnDo
 
 ### Delete chatbox and messagebox
 DELETE http://127.0.0.1:3000/api/box/chat/5f65275e4d766e8ae2b4a068

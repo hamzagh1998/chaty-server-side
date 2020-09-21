@@ -1,6 +1,7 @@
+const connect = require('./config/db')
 const express = require('express')
 const morgan = require('morgan')
-const connect = require('./config/db')
+const cors = require('cors')
 
 const app = express()
 
@@ -13,6 +14,9 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // ----------------------------------- middleware -----------------------------------
+// Enable all CORS requests
+app.use(cors())
+
 // Body parser
 app.use(express.json())
 

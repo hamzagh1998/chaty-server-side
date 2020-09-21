@@ -3,8 +3,8 @@ POST https://chaty-11.herokuapp.com/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "saleh",
-  "password": "saleh"
+  "username": "ines",
+  "password": "ines"
 }
 
 ### Login
@@ -12,16 +12,56 @@ POST https://chaty-11.herokuapp.com/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "saleh",
-  "password": "saleh"
+  "username": "ines",
+  "password": "ines"
 }
 
 ### Send message
 POST https://chaty-11.herokuapp.com/api/box/chat
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjE1YjE3Y2JlMTlhMDAxZTk4Nzk0NiIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDI5MDk1MH0.LuVOLHfPUSzIDrdX5NHMluCPvYKuoI_zhUzN6DckTMo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUyYWZmMjhhNGNiMDAxZTkzZDc4NyIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDQ2NjU3NX0.-7gCEMrOQF4CE6SmA_zw9bTOfyY6z2SJSdlo3MWCbbM
 
 {
-  "peerId": "5f615ac5cbe19a001e987945",
-  "message": "How are you?"
+  "peerId": "5f652aef28a4cb001e93d785",
+  "message": "HoHo!"
+}
+
+### Get messagesbox
+GET https://chaty-11.herokuapp.com/api/box/messages
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUyYWVmMjhhNGNiMDAxZTkzZDc4NSIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDQ2NTY2OH0.M_fFJT5_Z8DZK7RcPuVnhwvTCDUl2NCjCxwJNha3Pnc
+
+
+### Get chatbox
+GET https://chaty-11.herokuapp.com/api/box/chat/5f652dcc28a4cb001e93d790
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUyYWVmMjhhNGNiMDAxZTkzZDc4NSIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDQ2NTY2OH0.M_fFJT5_Z8DZK7RcPuVnhwvTCDUl2NCjCxwJNha3Pnc
+
+
+### Delete chatbox and messagebox
+DELETE https://chaty-11.herokuapp.com/api/box/chat/5f652dcc28a4cb001e93d790
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUyYWVmMjhhNGNiMDAxZTkzZDc4NSIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDQ2NTY2OH0.M_fFJT5_Z8DZK7RcPuVnhwvTCDUl2NCjCxwJNha3Pnc
+
+### Get all users
+GET https://chaty-11.herokuapp.com/api/users/all
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUyYWVmMjhhNGNiMDAxZTkzZDc4NSIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDQ2NTY2OH0.M_fFJT5_Z8DZK7RcPuVnhwvTCDUl2NCjCxwJNha3Pnc
+
+### Post block user
+POST https://chaty-11.herokuapp.com/api/users/block
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUyYWVmMjhhNGNiMDAxZTkzZDc4NSIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDQ2NTY2OH0.M_fFJT5_Z8DZK7RcPuVnhwvTCDUl2NCjCxwJNha3Pnc
+
+{
+  "peerId": "5f652aff28a4cb001e93d787"
+}
+
+### Post unblock user
+POST https://chaty-11.herokuapp.com/api/users/unblock
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUyYWVmMjhhNGNiMDAxZTkzZDc4NSIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDQ2NTY2OH0.M_fFJT5_Z8DZK7RcPuVnhwvTCDUl2NCjCxwJNha3Pnc
+
+{
+  "peerId": "5f652aff28a4cb001e93d787"
 }

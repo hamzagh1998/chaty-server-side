@@ -1,3 +1,4 @@
 /node_modules
 .env
-.rest
+dev-requests.rest
+pro-requests.rest
