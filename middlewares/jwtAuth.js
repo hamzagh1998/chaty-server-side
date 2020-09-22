@@ -12,7 +12,7 @@ module.exports = {
       if (user) {
         const password = await bcrypt.compare(hashedPassword, user.password)
         if (password) {
-          req.user = {id: user._id, username: user.name, blockedBy: user.blockedBy} 
+          req.user = {id: user._id, username: user.username, blockedBy: user.blockedBy} 
           next()
         }
         else res.json({error: true, msg: 'Invalid password!'})
