@@ -8,7 +8,7 @@ const ChatBoxSchema = new mongoose.Schema({
     type: Object,
   },
   messages: {
-    type:  [{ user: Object, message: String }]
+    type:  [{ user: Object, message: String , dateSended: {type: Date, default: Date.now }}]
   }
 })
 

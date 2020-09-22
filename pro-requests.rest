@@ -3,8 +3,8 @@ POST https://chaty-11.herokuapp.com/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "ines",
-  "password": "ines"
+  "username": "hamza",
+  "password": "hamza"
 }
 
 ### Login
@@ -12,18 +12,18 @@ POST https://chaty-11.herokuapp.com/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "ines",
-  "password": "ines"
+  "username": "hamza",
+  "password": "hamza"
 }
 
 ### Send message
 POST https://chaty-11.herokuapp.com/api/box/chat
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUyYWZmMjhhNGNiMDAxZTkzZDc4NyIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDQ2NjU3NX0.-7gCEMrOQF4CE6SmA_zw9bTOfyY6z2SJSdlo3MWCbbM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUyYWUxMjhhNGNiMDAxZTkzZDc4NCIsInVzZXJuYW1lIjoiaGFtemEiLCJibG9ja2VkQnkiOltdLCJpYXQiOjE2MDA4MDM1Mjh9.gNM43EjRpE4h7gEB8NCtwGhQARGzudqEDKa2JZN165U
 
 {
   "peerId": "5f652aef28a4cb001e93d785",
-  "message": "HoHo!"
+  "message": "Hello!!"
 }
 
 ### Get messagesbox

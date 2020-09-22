@@ -23,7 +23,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUxYzkzZ
 
 {
   "peerId": "5f651c9bd12c9f8d0e8b4bb0",
-  "message": "similique excepturi aspernatur exercitationem."
+  "message": "similique excepturi aspernatur."
 }
 
 ### Get messagesbox
