@@ -12,29 +12,29 @@ POST http://127.0.0.1:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "sami",
-  "password": "sami"
+  "username": "hamza",
+  "password": "hamza"
 }
 
 ### Send message
 POST http://127.0.0.1:3000/api/box/chat
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUxYzkzZDEyYzlmOGQwZThiNGJhZiIsInVzZXJuYW1lIjoic2FtaSIsImJsb2NrZWRCeSI6W3siaWQiOiI1ZjY1MWNhNGQxMmM5ZjhkMGU4YjRiYjEifV0sImlhdCI6MTYwMDc5NzAwNH0.xJzv1kPbd0F3odmOOPkm8GrR-ad5rQOCGhkAYLDma5g
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNmI2MmVjMTQyOWRkNTVkY2U1OWE3ZCIsInVzZXJuYW1lIjoiaGFtemEiLCJibG9ja2VkQnkiOltdLCJpYXQiOjE2MDA4NzMyMDJ9._Q899n039YsKFgK806N3IDNQWsmsIjMukowrP-qoWsw
 
 {
-  "peerId": "5f651c9bd12c9f8d0e8b4bb0",
+  "peerId": "5f651ca4d12c9f8d0e8b4bb1",
   "message": "similique excepturi aspernatur."
 }
 
 ### Get messagesbox
 GET http://127.0.0.1:3000/api/box/messages
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUxYzliZDEyYzlmOGQwZThiNGJiMCIsInVzZXJuYW1lIjoiaGFtemEiLCJibG9ja2VkQnkiOlt7ImlkIjoiNWY2NTFjYTlkMTJjOWY4ZDBlOGI0YmIyIn1dLCJpYXQiOjE2MDA2OTIzMDl9.XeJ7l9eoh1-gfzfIwKZ_YGPG_xvBnzKkPCjbmAt4yd4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNmI2MmVjMTQyOWRkNTVkY2U1OWE3ZCIsInVzZXJuYW1lIjoiaGFtemEiLCJibG9ja2VkQnkiOltdLCJpYXQiOjE2MDA4NzMyMDJ9._Q899n039YsKFgK806N3IDNQWsmsIjMukowrP-qoWsw
 
 ### Get chatbox
-GET http://127.0.0.1:3000/api/box/chat/5f6526b04d766e8ae2b4a064
+GET http://127.0.0.1:3000/api/box/chat/5f6b64ef1429dd55dce59a7e
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjI1MjFkYTExMzQ0Mzc0NTAxMDFjMiIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDM4MDM4OH0.aHuaZMhqF16hE2wfba_mtZrKqG2wLa-03DfnbUMwA4Q
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNmI2MmVjMTQyOWRkNTVkY2U1OWE3ZCIsInVzZXJuYW1lIjoiaGFtemEiLCJibG9ja2VkQnkiOltdLCJpYXQiOjE2MDA4NzMyMDJ9._Q899n039YsKFgK806N3IDNQWsmsIjMukowrP-qoWsw
 
 ### Delete chatbox and messagebox
 DELETE http://127.0.0.1:3000/api/box/chat/5f65275e4d766e8ae2b4a068
@@ -49,17 +49,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjI1ZTA1M
 ### Post block user
 POST http://127.0.0.1:3000/api/users/block
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUxYzliZDEyYzlmOGQwZThiNGJiMCIsInVzZXJuYW1lIjoiaGFtemEiLCJibG9ja2VkQnkiOltdLCJpYXQiOjE2MDA2ODI5MDF9.SrOjcqasOD4XWv3Mz8ocm2clK826Tj_pC2_HcAspzv0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNmI2MmVjMTQyOWRkNTVkY2U1OWE3ZCIsInVzZXJuYW1lIjoiaGFtemEiLCJibG9ja2VkQnkiOltdLCJpYXQiOjE2MDA4NzMyMDJ9._Q899n039YsKFgK806N3IDNQWsmsIjMukowrP-qoWsw
 
 {
-  "peerId": "5f651ca9d12c9f8d0e8b4bb2"
+  "peerId": "5f651ca4d12c9f8d0e8b4bb1"
 }
 
 ### Post unblock user
 POST http://127.0.0.1:3000/api/users/unblock
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNjUxYzliZDEyYzlmOGQwZThiNGJiMCIsImJsb2NrZWRCeSI6W10sImlhdCI6MTYwMDQ2NDYyNn0.ifcdhlkJVtf8jgZ2mjAykhoVuqG9KfAVtCd8t17N7wM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNmI2MmVjMTQyOWRkNTVkY2U1OWE3ZCIsInVzZXJuYW1lIjoiaGFtemEiLCJibG9ja2VkQnkiOltdLCJpYXQiOjE2MDA4NzMyMDJ9._Q899n039YsKFgK806N3IDNQWsmsIjMukowrP-qoWsw
 
 {
-  "peerId": "5f651ca9d12c9f8d0e8b4bb2"
+  "peerId": "5f651ca4d12c9f8d0e8b4bb1"
 }

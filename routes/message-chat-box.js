@@ -11,7 +11,7 @@ const deleteChatMsgBox = require('../helpers/deleteChatMsgBox')
 // Get MessagesBox
 router.get('/messages', verifyUser, async (req, res) => {
   const messagesBox = await getUserMsgsBox(req.user.id)
-  const response = messagesBox ? messagesBox.messages.reverse() : null
+  const response = messagesBox ? messagesBox : null
   
   res.json(response)
 })

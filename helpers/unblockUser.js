@@ -1,4 +1,6 @@
 const User = require('../models/User')
+const MessageBox = require('../models/MessageBox')
+const ChatBox = require('../models/ChatBox')
 const ObjectId = require('mongoose').Types.ObjectId
 
 async function unblockUser(userId, peerId) {
@@ -10,6 +12,32 @@ async function unblockUser(userId, peerId) {
       const blocked = user.blockedBy.filter(obj => obj.id.toString() === peerId)
       if (blocked.length > 0) {
         await User.updateOne(
+            {
+              'blockedBy.id': ObjectId(peerId)
+            },
+            {
+              '$pull': 
+              {
+                'blockedBy': {'id': ObjectId(peerId)}
+              }
+            }, (err, data) => {
+              if (err) console.error(err)
+            })
+
+        await MessageBox.updateOne(
+            {
+              'blockedBy.id': ObjectId(peerId)
+            },
+            {
+              '$pull': 
+              {
+                'blockedBy': {'id': ObjectId(peerId)}
+              }
+            }, (err, data) => {
+              if (err) console.error(err)
+            })
+        
+        await ChatBox.updateOne(
             {
               'blockedBy.id': ObjectId(peerId)
             },

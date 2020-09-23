@@ -6,6 +6,9 @@ const MessageBoxSchema = new mongoose.Schema({
   },
   messages: {
     type: Array
+  },
+  blockedBy: {
+    type: Array
   }
 })
 
