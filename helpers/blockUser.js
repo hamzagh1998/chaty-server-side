@@ -14,17 +14,13 @@ async function blockUser(userId, peerId) {
         await user.blockedBy.push({id: ObjectId(peerId)})
         await user.save()
         
-        const messageBoxs = await MessageBox.find({'user.id': userId})
-        await messageBoxs.forEach(box => {
-          box.blockedBy.push({id: ObjectId(peerId)})
-          box.save()
-        })
+        const messageBox = await MessageBox.findOne({'user.id': userId, 'peer.id': peerId})
+        await messageBox.blockedBy.push({id: ObjectId(peerId)})
+        await messageBox.save()
 
-        const chatBoxs = await ChatBox.find({'user.id': userId})
-        await chatBoxs.forEach(box => {
-          box.blockedBy.push({id: ObjectId(peerId)})
-          box.save()
-        })
+        const chatBox = await ChatBox.findOne({'user.id': userId, 'peer.id': peerId})
+        await chatBox.blockedBy.push({id: ObjectId(peerId)})
+        await chatBox.save()
 
         response = true
       }
