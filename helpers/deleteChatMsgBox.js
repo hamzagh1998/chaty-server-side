@@ -17,7 +17,7 @@ async function deleteChatMsgBox(userId, chatId) {
         }, err => {
           if (err) console.error(err)
         })
-      await ChatBox.deleteOne(chatBox)
+      await ChatBox.deleteOne({_id: chatId})
       response = true
     }
   } catch (err) {

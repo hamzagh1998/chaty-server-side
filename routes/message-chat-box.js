@@ -7,6 +7,7 @@ const getUserChatBox = require('../helpers/getUserChatBox')
 const getUserMsgsBox = require('../helpers/getUserMsgsBox')
 const checkMsgChatDoc = require('../helpers/checkMsgChatDoc')
 const deleteChatMsgBox = require('../helpers/deleteChatMsgBox')
+const { json } = require('express')
 
 // Get MessagesBox
 router.get('/messages', verifyUser, async (req, res) => {
@@ -39,7 +40,7 @@ router.post('/chat', verifyUser, async (req, res) => {
         const chatBox  = await checkMsgChatDoc(req.user, peerObj, messageObj) 
         if (chatBox) response = chatBox.messages.slice(-1)[0] // Get last message Object
       } else {
-        return res.sendStatus(403)
+        response = {error: true, msg: `Error: The message couldn't send, you might have been blocked by this user`}
       }
     }
   } catch (err) {
@@ -52,7 +53,7 @@ router.post('/chat', verifyUser, async (req, res) => {
 // Delete chatbox and messagebox
 router.delete('/chat/:id', verifyUser, async (req, res) => {
   const response = await deleteChatMsgBox(req.user.id, req.params.id)
-  response ? res.sendStatus(200) : res.sendStatus(403)
+  response ? res.json({error: false, msg: 'message Deleted!'}) : res.sendStatus(403)
 })
 
 module.exports = router

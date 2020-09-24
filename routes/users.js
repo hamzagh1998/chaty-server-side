@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-const { verifyUser, checkUser } = require('../middlewares/jwtAuth')
+const { verifyUser } = require('../middlewares/jwtAuth')
 
 // helper function
 const getAllUsers = require('../helpers/getAllUsers')
@@ -18,13 +18,13 @@ router.get('/all', verifyUser, async (req, res) => {
 // Block user
 router.post('/block', verifyUser, async (req, res) => {
   const response = blockUser(req.user.id, req.body.peerId)
-  if (response) res.sendStatus(200)
+  if (response) res.json({error: false, msg: 'User had been blocked!'})
   else res.json({error: true, msg: 'Failed please check peer id!'})
 })
 
 router.post('/unblock', verifyUser, async (req, res) => {
   const response = unblockUser(req.user.id, req.body.peerId)
-  if (response) res.sendStatus(200)
+  if (response) res.json({error: false, msg: 'User had been unblocked!'})
   else res.json({error: true, msg: 'Failed please check peer id!'})
 })
 
