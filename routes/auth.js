@@ -26,7 +26,7 @@ router.post('/login', checkUser, (req, res) => {
     const token = jwt.sign(req.user, process.env.TOKEN_ACCESS_KEY)
     res.json({ error: false, token })
   } catch (err) {
-    res.json({ error: false, msg: `Unexpected error: ${err}` })
+    res.json({ error: true, msg: `Unexpected error: ${err}` })
   }
 
 })
